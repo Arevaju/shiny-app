@@ -13,7 +13,7 @@ shinyUI(pageWithSidebar(
     checkboxGroupInput(inputId = 'country_filter1',
                        label = (HTML("<b>Select the region of interest:</b>")), 
                        sort(unique(data$Country)),
-                       selected = "Austria"),
+                       selected = sort(unique(data$Country))),
     radioButtons(inputId ="year",
                  label = (HTML("<b>Select the year of interest:</b>")),
                  choices = list ("2010"= "2010",
