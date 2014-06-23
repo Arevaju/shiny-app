@@ -34,7 +34,7 @@ shinyServer(function(input, output) {
     a$title(text= "Title")
     a$xAxis(categories= rownames(passData()),tickmarkPlacement='on',lineWidth=0)
     a$yAxis(gridLineInterpolation='polygon',lineWidth=0,min=0)
-    a$data(passData1(),pointPlacement='on')    
+    a$data(passData1()[,c(1,4,7)],pointPlacement='on')    
     return(a)    
   })
 })
