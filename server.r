@@ -1,4 +1,3 @@
-load('data.RData')
 shinyServer(function(input, output) { 
   passData <- reactive({
     data <- data[data$Country %in% input$country_filter1 & 
