@@ -1,3 +1,4 @@
+load('data.RData')
 shinyServer(function(input, output) { 
   passData <- reactive({
     data <- data[data$Country %in% input$country_filter1 & 
@@ -11,6 +12,7 @@ shinyServer(function(input, output) {
     datasplit <- split(data[7:9], data$Year, drop=TRUE)
     datasplit <- do.call(cbind, datasplit)
     rownames(datasplit) = unique(datasplit$NUTS_CODE)  
+    datasplit <- strsplit(input$indicator, ",")[[1]]
     datasplit
   })
   
