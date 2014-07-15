@@ -7,9 +7,7 @@ shinyUI(pageWithSidebar(
                 label = (HTML("<b>Select a list of indicators:</b>")),
                 multiple = TRUE,
                 selected = "Ind1",
-                choices = list("Water stress" = "Ind1, Ind2")),
-                #as.list(colnames(data)[7:9])),    
-    
+                choices = list("Water stress" = "Ind1")),  
     checkboxGroupInput(inputId = 'country_filter1',
                        label = (HTML("<b>Select the region of interest:</b>")), 
                        sort(unique(data$Country)),
