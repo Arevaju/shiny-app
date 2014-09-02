@@ -25,6 +25,6 @@ shinyUI(pageWithSidebar(
   mainPanel(  
     tabsetPanel(
    #   tabPanel("Charts",showOutput ("radar", "Highcharts")),   
-      tabPanel("Multiyear", showOutput ("radar1", "Highcharts"))
+      tabPanel("Multiyear", showOutput ("radar1", "highcharts"))
     )
   )))

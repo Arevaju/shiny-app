@@ -1,3 +1,5 @@
+require("shiny")
+require("rCharts")
 shinyServer(function(input, output) { 
  
   
@@ -10,7 +12,9 @@ shinyServer(function(input, output) {
   
   passData2 <- reactive({
   indicators <- strsplit(input$indicator, ",")[[1]]
-  indicators 
+
+  
+    indicators 
   })
 
 #######################################################################################
@@ -24,7 +28,8 @@ shinyServer(function(input, output) {
     a$xAxis(categories= rownames(passData()),tickmarkPlacement='on',lineWidth=0)
     a$yAxis(gridLineInterpolation='polygon',lineWidth=0,min=0)
  #  a$data(passData1()[,c(7,8,9)],pointPlacement='on')    
-   a$data(passData2(),pointPlacement='on') 
+ #  a$data(passData2(),pointPlacement='on') 
+    a$data(as.numeric(passData2()),pointPlacement='on') 
     return(a)    
   })
 })
