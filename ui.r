@@ -6,7 +6,8 @@ shinyUI(pageWithSidebar(
     selectInput(inputId = "indicator",
                 label = (HTML("<b>Select a list of indicators:</b>")),
                 multiple = TRUE,
-               choices = list("Water stress" = "Ind1, Ind2")),
+                selected = 'Water stress',
+               choices = list("Water stress" = "Water stress", "Water scarcity" = "Water scarcity" )),
                                              
     checkboxGroupInput(inputId = 'country_filter1',
                        label = (HTML("<b>Select the region of interest:</b>")), 
@@ -23,8 +24,7 @@ shinyUI(pageWithSidebar(
   ),
   # Show the results from the query  
   mainPanel(  
-    tabsetPanel(
-   #   tabPanel("Charts",showOutput ("radar", "Highcharts")),   
+    tabsetPanel( 
       tabPanel("Multiyear", showOutput ("radar1", "highcharts"))
     )
   )))
