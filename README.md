@@ -9,7 +9,7 @@ require(shiny)
 require(rCharts)
 ```
 
-Acknowlegments
+Acknowledgments
 ====================
 
 * Ramnath Vaidyanathan for rCharts
